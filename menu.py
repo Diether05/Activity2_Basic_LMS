@@ -8,6 +8,8 @@ manage_menu = """Please Select numbers (1-5):
 Your selection: """
 
 student_menu = """
+You selected Student Menu...
+
 1. Add Student
 2. View Student List
 3. View Student Class
@@ -19,6 +21,8 @@ Your Selection
 """
 
 teacher_menu = """
+You selected Teacher Menu...
+
 1. Add Teacher
 2. View All Teachers
 3. View Teacher's Class
@@ -29,6 +33,8 @@ Your Selection
 """
 
 class_menu = """
+You selected Class Menu...
+
 1. Add Class
 2. View All Class
 3. Remove Class
@@ -38,10 +44,12 @@ Your Selection
 """
 
 subject_menu = """
+You selected Subject Menu...
+
 1. Add Subject
 2. View All Subject
 3. Remove Subject
-$. Exit
+4. Exit
 
 Your Selection
 """
