@@ -91,6 +91,26 @@ FROM subject
 """
 REMOVE_SUBJECT = "DELETE FROM subject WHERE subjectID = ? ;"
 
+SHOW_STUDENTS_SUBJECT = """
+SELECT first_name || " " || middle_name || " " || last_name, subject, unit
+FROM student s
+INNER JOIN schedule sched
+ON s.studentID = sched.studentID
+INNER JOIN class cls
+ON sched.classID = cls.classID
+INNER JOIN subject sbt
+ON cls.subjectID = sbt.subjectID
+"""
+
+SHOW_TEACHERS_SUBJECT = """
+SELECT first_name || " " || middle_name || " " || last_name AS "Full Name", subject, unit
+FROM teacher t
+INNER JOIN class cls
+ON t.teacherID = cls.teacherID
+INNER JOIN subject sbt
+ON cls.subjectID = sbt.subjectID
+"""
+
 connection = sqlite3.connect("database.db")
 
 
@@ -192,4 +212,14 @@ def remove_subject(subjectID):
         cursor.execute(REMOVE_SUBJECT, (subjectID,))
         return cursor.fetchall()
 
+def view_student_subject():
+    with connection:
+        cursor = connection.cursor()
+        cursor.execute(SHOW_STUDENTS_SUBJECT)
+        return cursor.fetchall()
 
+def view_teacher_subject():
+    with connection:
+        cursor = connection.cursor()
+        cursor.execute(SHOW_TEACHERS_SUBJECT)
+        return cursor.fetchall()
