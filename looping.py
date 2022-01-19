@@ -1,10 +1,11 @@
 import  prompt
 import menu
+import database
 
 
 def loop():
     user_input = int(input(menu.manage_menu))
-    while user_input != 5:
+    while user_input != 7:
         if user_input == 1:
             user_input2 = int(input(menu.student_menu))
             while user_input2 != 5:
@@ -85,6 +86,12 @@ def loop():
                     print("Invalid input, please try again!")
 
                 user_input5 = int(input(menu.class_menu))
+
+        elif user_input == 5:
+            prompt.prompt_view_student_subject()
+        
+        elif user_input == 6:
+            prompt.prompt_view_teacher_subject()
 
         else:
             print("Invalid input, please try again!")
