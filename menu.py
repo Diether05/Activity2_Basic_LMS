@@ -3,7 +3,9 @@ manage_menu = """Please Select numbers (1-5):
 2) Manage Teacher
 3) Manage Subject
 4) Manage Class
-5) Exit
+5) Show student's subject
+6) Show teacher's subject
+7) Exit
 
 Your selection: """
 
